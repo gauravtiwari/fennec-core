@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Fennec-Core/Director
+    = csrf_meta_tags
+    = stylesheet_link_tag    'director', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'director', 'data-turbolinks-track': 'reload'
+  %body
+    .container-fluid
+      .row
+        = side_bar(@current_menu)
+        .container-fluid.side-bar-offset
+          = title(@title)
+          = yield

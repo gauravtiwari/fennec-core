@@ -1,0 +1,206 @@
+$body-color: #f0f5f5;
+$primary-color: #354050;
+$primary-color-light: #454f60;
+$text-color: #3e4d60;
+$sidebar-text-color: #e3effe;
+$panel-bk-color: #ffffff;
+$panel-border-color: #cbdeea;
+$select-color: #f0f5f5;//#d9e4f2;
+$select-color-dark: #2a3040;
+$notification-color: #ed7575;
+$color-blue: #8bc7f5;
+$color-dark-blue: #6992bc;
+$color-green: #6abfaf;
+$color-red: #ee8985;
+$color-orange: #f5bc91;
+$button-blue: #41a0e2;
+$button-red: #fd7583;
+
+$logo-width: 60px;
+
+$color-separator: #303A4D;
+$color-separator-light: #4B5A74;
+$color-title-bottom: #3e4d60;
+$color-logo: $color-blue;
+$color-side-menu-highlight: $select-color;
+$color-side-menu-highlight-dark: $select-color-dark;
+$color-side-menu: #e3effe;
+$color-sidebar: #354050;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box-shadow($shadows...) {
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+  box-shadow: $shadows;
+}
+
+
+@font-face  {
+  font-family: 'Roboto';
+  src: font-url('Roboto-Light.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Roboto-bold';
+  src: font-url('Roboto-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+body {
+  background-color: $body-color;
+  color: $text-color;
+}
+
+h1 {
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+  font-size: 3rem;
+}
+
+a {
+  //color: $sidebar-text-color;
+  text-decoration: none;
+  &:hover {
+    color: $primary-color;
+    background-color: $body-color;
+  }
+
+  &:focus {
+    border: none!important;
+  }
+}
+
+.icon-bar {
+  background-color: $body-color;
+}
+
+.top-bar {
+  background-color: $primary-color;
+  a {
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+    font-weight: 300;
+  }
+}
+
+.top-bar-logo {
+  background-color: $primary-color-light;
+  width: $logo-width;
+
+  float: left;
+  font-size: 18px;
+  line-height: 20px;
+  height: 50px;
+  margin-left: -15px;
+
+  a:hover {
+    background-color: $primary-color-light;
+    color: $sidebar-text-color;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-bar-logo {
+    margin-left: 0px;
+  }
+}
+
+hr.style-one {
+  border: 0;
+  height: 1px;
+  background: $body-color;
+  background-image: linear-gradient(to right, $sidebar-text-color,$primary-color , $sidebar-text-color);
+  margin-top: -8px;
+}
+
+hr.style-two {
+  border: 0;
+  height: 1px;
+  background: $body-color;
+  background-image: linear-gradient(to right, $sidebar-text-color,$primary-color , $sidebar-text-color);
+}
+
+.fennec-logo {
+  margin-left: -4px;
+}
+
+.info-box {
+  padding: 10px;
+  @include border-radius(3px);
+  @include box-shadow(0px 0px 2px #aaa);
+  margin-bottom: 5px;
+}
+
+.red-box {
+  @extend .info-box;
+  background-color: $color-red;
+}
+
+.green-box {
+  @extend .info-box;
+  background-color: $color-green;
+}
+
+.blue-box {
+  @extend .info-box;
+  background-color: $color-blue;
+}
+
+.orange-box {
+  @extend .info-box;
+  background-color: $color-orange;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.button-blue {
+  background-color: $button-blue;
+  color: $body-color;
+}
+
+.callout {
+  border: solid #ccc 1px;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+.callout-danger {
+  @extend  .callout;
+  border-left: solid $color-red 5px;
+  //@include box-shadow(0px 0px 2px #aaa);
+}
+
+.callout-info {
+  @extend .callout;
+  border-left: solid $color-blue 5px;
+}
+
+.notice-icon {
+  font-size: 30px;
+  padding-top: 5px;
+  padding-left: 25px;
+  width: 80px;
+}
+
+.info-icon {
+  color: $color-blue;
+  @extend .notice-icon;
+}
+
+.error-icon {
+  color: $color-red;
+  @extend .notice-icon;
+}
+
+nav {
+  a {
+    color: $sidebar-text-color;
+  }
+}

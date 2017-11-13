@@ -1,0 +1,170 @@
+@import "tether.min";
+@import "bootstrap.min";
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+@import "colors";
+@import "director/layout";
+
+html {
+  font-size: 12px;
+}
+
+.side-bar {
+  position: fixed;
+  top: 0;
+  width: $sidebar-width;
+  background-color: $color-sidebar;
+  height: 100%;
+  z-index: 100;
+
+  .logo {
+    height: $page-top-offset + 1.6;
+    border-bottom: 1px solid $color-blue;
+    font-family: 'Roboto', sans-serif;
+    // font-weight: 100;
+    font-size: 1.5rem;
+    text-align: center;
+    color: $color-logo;
+    padding-top: 3rem;
+    letter-spacing: 0.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .menu-item {
+    background: transparent;
+    padding: $menu-item-padding 0;
+  }
+
+  .menu-item:hover {
+    background: $color-side-menu-highlight;
+  }
+
+  .menu-active {
+    background: $color-side-menu-highlight;
+    border-right: 8px solid $color-side-menu-highlight-dark;
+  }
+
+  .icon {
+    width: 2.5rem;
+    display: inline-block;
+  }
+
+  .menu-text {
+    display: inline-block;
+    font-family: 'DroidSans', sans-serif;
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 0.07rem;
+    font-size: 1rem;
+  }
+
+  a {
+    color: $color-side-menu;
+    text-decoration: none;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    color: $color-side-menu;
+    margin-left: 2rem;
+  }
+}
+
+.side-bar-offset {
+  margin-left: $sidebar-width + 1;
+}
+
+.separator {
+  height: 0.5rem;
+  border-bottom: 1px solid $color-separator-light;
+  margin: 0.5rem 3rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 0px 0px $color-separator;
+}
+
+.page-title {
+  height: $page-top-offset;
+  border-bottom: 1px solid $color-title-bottom;
+  margin-bottom: 2rem;
+  margin-top: 20px;
+}
+
+
+@media (max-width: $screen-xs-max) {
+  .side-bar {
+    width: 5rem;
+
+    .menu-item {
+      padding: 1.2rem 0;
+    }
+
+    li {
+      margin-left: 1.8rem;
+    }
+  }
+
+  .side-bar-offset {
+    margin-left: 6rem;
+  }
+}
+
+
+//iphone in portrait
+@media (max-device-width: 736px) and (orientation: portrait) {
+  html, body {
+    font-size: 26px;
+  }
+
+  .side-bar {
+    width: 5rem;
+
+    .menu-item {
+      padding: 0.7rem 0;
+    }
+
+    li {
+      margin-left: 1.8rem;
+    }
+
+    .icon {
+      font-size: 1.5rem;
+    }
+  }
+
+  .hidden-xs {
+    display: none!important;
+  }
+
+  .side-bar-offset {
+    margin-left: 6rem;
+  }
+
+  .widget-info {
+
+    height: 6rem;
+
+    .icon {
+      font-size: 2rem;
+      bottom: 1rem;
+      left: 2.3rem;
+    }
+
+    .title {
+      font-size: 1.1rem;
+      padding: 0.3rem 0.3rem;
+    }
+
+    .text {
+      font-size: 3rem;
+      bottom: 0.3rem;
+      right: 2.2rem;
+    }
+  }
+}

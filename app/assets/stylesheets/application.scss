@@ -1,4 +1,40 @@
+@import "tether.min";
 @import "bootstrap.min";
 
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+@import "colors";
+
+.description {
+  padding-top: 50px;
+
+  .header {
+    border-top: 10px solid $color-dark-blue;
+    background-color: $color-blue;
+    text-align: center;
+    padding: 20px;
+    h2 {
+      font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 20px;
+    }
+  }
+
+  a {
+    color: $primary-color;
+  }
+
+  .text {
+    background-color: $panel-bk-color;
+    padding: 20px 7px;
+    height: 130px;
+  }
+}
+
+.page-jumbotron {
+  background-color: $color-green;
+  color: $body-color;
+  border-radius: 0px!important;
+}

@@ -9,6 +9,7 @@
 
 #ignore RubyMine files
 /.idea
+/.idea/*
 
 
 # Ignore the default SQLite database.
@@ -25,3 +26,6 @@
 /yarn-error.log
 
 .byebug_history
+/public/packs
+/public/packs-test
+/node_modules

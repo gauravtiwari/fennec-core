@@ -7,4 +7,28 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = yield
+    %nav.navbar.navbar-toggleable-md.navbar-fixed-top.top-bar.navbar-inverse
+      %button{class: "navbar-toggler navbar-toggler-right collapsed", type: "button", data: {toggle: "collapse", target: "#fennec-navbar"}, aria: {controls: "fennec-navbar", expanded: "false", label: "Toggle navigation"}}
+        %span.navbar-toggler-icon
+      = link_to 'fennec', root_path, class: "navbar-brand top-bar-logo"
+      #fennec-navbar.collapse.navbar-collapse
+        %ul.navbar-nav.mr-auto
+          %li.nav-item.active
+            = link_to 'News', news_index_path, class: "nav-link"
+          %li.nav-item
+            = link_to 'About', welcome_about_path, class: "nav-link"
+        %ul.navbar-nav.navbar-right
+          %li
+            %a{href: '#'}
+              %i.fa.fa-question-circle
+              .visible-xs-inline
+                Help
+          %li
+            %a{href: '#'}
+              %i.fa.fa-cog
+              .visible-xs-inline
+                Setup
+          %li
+            = link_to 'Sign-in', "#"
+    .container
+      = yield
